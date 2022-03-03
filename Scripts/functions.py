@@ -97,9 +97,8 @@ def ising_plot(path=None, data=None, layout="spring", cut=0.8, image_name="netwo
 
     # data and path are not to be used simultaneously
     if data is not None:
-        pandas2ri.activate()
-        # convert pandas dataframe to R dataframe
-        data_r = pandas2ri.py2rpy_pandasdataframe(data)
+        pandas2ri.activate()             # automatic conversion of numpy objects into rpy2 objects
+        data_r = pandas2ri.py2rpy(data)  # convert pandas df to r df
 
     if path is not None:
         data_r = ro.DataFrame.from_csvfile(path)
