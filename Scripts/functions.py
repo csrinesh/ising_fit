@@ -55,9 +55,9 @@ def _checks(data, layout, cut, image_name):
         logging.error(traceback.format_exc())
 
 
-def ising_plot(data=None, layout="spring", cut=0.8, image_name="network.png", display_image=True, save=True):
+def ising_fit(data=None, layout="spring", cut=0.8, image_name="network.png", display_image=True, save=True):
     """
-    IsingFit wrapper for python usage
+    IsingFit wrapper for python usage. Non binary columns are automatically excluded.
     Note: Not all qgraph functionality is present. WIP/ upon request.
 
     Parameters
@@ -129,3 +129,8 @@ def ising_plot(data=None, layout="spring", cut=0.8, image_name="network.png", di
                 picture = image.open(image_name)
                 picture.show()
         return ising
+
+
+def q_graph():
+    """ Python version w/ networkx WIP"""
+    return
